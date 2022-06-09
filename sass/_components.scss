@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes pulse-animation {
+    0% {
+      box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 2px rgb(255, 255, 255);
+    }
+  }
+
+  @keyframes color-change {
+    0% { color: white; }
+    50% { color: var(--second-color); }
+    100% { color: white; }
+  }
+
+#userNav {
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem;
+    font-size: 1.8rem;
+    font-family: Lora, sans-serif;
+
+    & h2 {
+        display: inline-block;
+        position: relative;
+    }
+    & h2:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--second-color);
+        transform-origin: bottom right;
+        transition: transform 0.5s ease-out;
+      }
+      h2:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+}
+
+#userNav img {
+    width: 3rem;
+    height: 3rem;
+}
+
+#userNav h2 input {
+    opacity: 1;
+    position: relative;
+    right: 50%;
+}
+
+#logo {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+#musicArtists {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-right: 10rem;
+    padding-left: 10rem;
+    animation: fadeIn 1.5s;
+    & h3 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        color: var(--second-color);
+    }
+    & h4 {
+        font-size: 3rem;
+    }
+}
+
+#musicArtists div:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+#musicArtists > div {    
+    color: white;
+    width: 80wv;
+    height: 18vh;
+    border-radius: 3rem;
+    display: flex;
+    &:hover:not(.socials)  {
+        animation: pulse-animation 2s infinite;
+    }
+}
+
+#juiceWrld, #mariaBecerra {
+    justify-content: flex-end;
+    align-items: center;
+    & ul, .socials {
+        margin-right: 4vw;
+    }
+}
+
+#badBunny, #drake {
+    justify-content: flex-start;
+    align-items: center;
+    & ul, .socials {
+        margin-left: 4vw;
+    }
+}
+
+.socials {
+    img {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+#musicArtists ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+#juiceWrld {
+     background: url("../imgs/artists/juicewrld.jpg") no-repeat left top, linear-gradient(to right, black 50%, white 100%);
+    }
+
+#badBunny {
+    background: url("../imgs/artists/badbunny.jpg") no-repeat right top, linear-gradient(to right, black 0%, yellow 100%);
+   }
+    
+#mariaBecerra {
+    background: url("../imgs/artists/mariabecerra.jpg") no-repeat left top, linear-gradient(to right, purple 20%, black 100%);
+   }
+
+#drake {
+    background: url("../imgs/artists/drake.jpg") no-repeat right top, linear-gradient(to right, rgba(129, 27, 27, 0.267) 20%, black 100%);
+   }
+
+#musicArtists ul li{    
+    font-size: 2rem;
+}
+
+#action {
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 1;
+}
+
+#logindiv, #registerdiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    & h4 {
+        border-bottom: 3px solid var(--second-color);
+    }
+    
+}
+
+#login, #register {
+    display: flex;    
+    flex-direction: column;
+    width: 50rem;
+    & input[type=button] {
+        display: flex;
+        justify-content: center;
+        background-color: var(--second-color);
+        height: 4rem;
+        border: none;
+        border-radius: 1rem;
+        font-size: 2.5rem;
+        
+        &:hover {
+            background-color: black;
+            color: white;
+            transition: ease-out all 0.6s;
+            
+        }
+    }
+}
+
+#customizedtext {
+    animation: color-change 4s infinite;
+}
+
+footer {
+    height: 25vh;
+    background-image: linear-gradient(to right, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    display: flex;
+    justify-content: space-evenly;
+    padding-right: 10rem;
+    padding-left: 10rem;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+    color: var(--second-color);
+    & #miscelanea ul{
+        list-style-type: none;
+    }
+}

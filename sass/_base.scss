@@ -1,0 +1,117 @@
+:root {
+    --color-primary: #000000;
+    --color-primary-light: #434343;
+    --color-primary-dark: #BA265D;
+
+    --primary-color: #f4f2f2;
+    --second-color: #f3ca20;
+    --primary-color-burguer: #f4f2f2;
+
+    --color-grey-light-1: #faf9f9;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+    
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+
+    --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
+    --shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+    
+    --line: 1px solid var(--color-grey-light-2);
+  
+
+}
+
+
+
+$bp-largest: 90.625em;     // 1450px
+$bp-large: 68.75em;    // 1100px
+$bp-medium: 56.25em;   // 900px
+$bp-smallest: 28.125em; // 450px
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+
+    @media only screen and (max-width: $bp-large) {
+        font-size: 50%;
+        #musicArtists > div {
+            background-size: cover;
+        }
+    }
+}
+
+body {
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 4rem;
+    background-image: linear-gradient(to right, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    opacity: 0.8;
+    color: var(--primary-color);
+    text-align: center;
+    padding-right: 20rem;
+    padding-left: 20rem;
+}
+
+@media screen and (max-width: $bp-largest){
+
+    #musicArtists {
+        background-color: rgba(224, 248, 4, 0.212);
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        & > div{
+            width: 70rem;
+            height: 40rem;
+            background-size: auto;
+            align-items: flex-end;
+                        
+            justify-content: space-evenly;
+            margin-left: 0;
+        }
+        & #juiceWrld, #mariaBecerra {
+            flex-direction: row-reverse;
+        }
+    }
+    #action {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: $bp-medium) {
+    html {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #userNav {
+        flex-wrap: wrap;
+    }
+    #musicArtists {
+        width: 80vw;
+    }
+    #musicArtists > div{
+        width: 60vw;
+
+    }
+}
+
+@media screen and (max-width: $bp-smallest) {
+    #musicArtists > div{
+        height: 100vh;
+    }
+}
