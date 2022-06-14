@@ -19,15 +19,17 @@
        <h2>Buscar</h2>
        <h2>Descubrir</h2>
        <br>
-       <h2>Entrar | Registrarse
+       <h2><a href="#action"> Entrar | Registrarse</a>
        </h2>
     </nav>
 
     <section id="musicArtists">
         <h3>Artistas más escuchados</h3>
         <div id="juiceWrld">
+            <img src="./imgs/artists/juicewrld.jpg">
+            <div class="artistInfo">            
             <ul>
-            <h4>Juice WRLD</h4>
+                <h4>Juice WRLD</h4>
                 <li>Fighting Demons</li>
                 <li>Legends Never Die</li>
                 <li>Goodbye & Good Riddance</li>
@@ -39,21 +41,27 @@
                 <a href=""><img src="./imgs/icons/twitter.png"></a>
             </div>
         </div>
+        </div>
         <div id="badBunny">
-            <ul>
-            <h4>Bad Bunny</h4>
-                <li>Un Verano Sin Ti</li>
-                <li>EL ÚLTIMO TOUR DEL MUNDO</li>
-                <li>LAS QUE NO IBAN A SALIR</li>
-            </ul>
+            <img src="./imgs/artists/badbunny.jpg">
+            <div class="artistInfo">
+                <ul>
+                    <h4>Bad Bunny</h4>
+                        <li>Un Verano Sin Ti</li>
+                        <li>EL ÚLTIMO TOUR DEL MUNDO</li>
+                        <li>LAS QUE NO IBAN A SALIR</li>
+                    </ul>
             <div class="socials">
                 <a href=""><img src="./imgs/icons/spotify.png"></a>
                 <a href=""><img src="./imgs/icons/youtube.png"></a>
                 <a href=""><img src="./imgs/icons/instagram.png"></a>
                 <a href=""><img src="./imgs/icons/twitter.png"></a>
             </div>
+            </div>
         </div>
         <div id="mariaBecerra">
+            <img src="./imgs/artists/mariabecerra.jpg">
+            <div class="artistInfo">
             <ul>
             <h4>María Becerra</h4>
                 <li>Entre Nosotros (Remix)</li>
@@ -66,19 +74,23 @@
                 <a href=""><img src="./imgs/icons/instagram.png"></a>
                 <a href=""><img src="./imgs/icons/twitter.png"></a>
             </div>
+        </div>
         </div>            
         <div id="drake">
-            <ul>
-            <h4>Drake</h4>
-                <li>Certified Lover Boy</li>
-                <li>Scorpion</li>
-                <li>More Life</li>
-            </ul>
-            <div class="socials">
-                <a href=""><img src="./imgs/icons/spotify.png"></a>
-                <a href=""><img src="./imgs/icons/youtube.png"></a>
-                <a href=""><img src="./imgs/icons/instagram.png"></a>
-                <a href=""><img src="./imgs/icons/twitter.png"></a>
+            <img src="./imgs/artists/drake.jpg">
+            <div class="artistInfo">
+                <ul>
+                <h4>Drake</h4>
+                    <li>Certified Lover Boy</li>
+                    <li>Scorpion</li>
+                    <li>More Life</li>
+                </ul>
+                <div class="socials">
+                    <a href=""><img src="./imgs/icons/spotify.png"></a>
+                    <a href=""><img src="./imgs/icons/youtube.png"></a>
+                    <a href=""><img src="./imgs/icons/instagram.png"></a>
+                    <a href=""><img src="./imgs/icons/twitter.png"></a>
+                </div>
             </div>
         </div>
     </section>
@@ -89,8 +101,9 @@
 
     <div id="action">        
         <div id="logindiv">
-        <h4>Entrar</h4>        
-        <form id="login">
+            <input id="loginShow" type="radio" name="option" checked>
+            <label for="loginShow">Entrar</label>
+            <form id="login">
                 Usuario: <input type="text">
                 Contraseña: <input type="password">
                 <br>
@@ -99,7 +112,8 @@
         </div>
         <br>
         <div id="registerdiv">
-            <h4>Registrarse</h4>
+            <input id="registerShow" type="radio" name="option">
+            <label for="registerShow">Registrarse</label>
             <form id="register">
                 Nombre de usuario: <input type="text">
                 Email: <input type="email" name="" id="">
@@ -112,8 +126,6 @@
     </div>
 
     <br>
-
-    <hr>
 
     <footer>
         <div id="miscelanea">

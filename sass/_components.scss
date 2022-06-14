@@ -22,10 +22,12 @@
 
 #userNav {
     display: flex;
+    align-items: center;
     justify-content: space-around;
     padding: 3rem;
     font-size: 1.8rem;
     font-family: Lora, sans-serif;
+    background-image: linear-gradient(to right, var(--color-primary-light) 0%, var(--color-primary) 100%);
 
     & h2 {
         display: inline-block;
@@ -50,9 +52,10 @@
 
 }
 
-#userNav img {
-    width: 3rem;
-    height: 3rem;
+#userNav #logo {
+    width: 12rem;
+    height: 8rem;
+    border-radius: 30%;
 }
 
 #userNav h2 input {
@@ -61,18 +64,13 @@
     right: 50%;
 }
 
-#logo {
-    width: 2.5rem;
-    height: 2.5rem;
-}
-
 #musicArtists {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
-    padding-right: 10rem;
-    padding-left: 10rem;
+    padding-right: 7rem;
+    padding-left: 7rem;
     animation: fadeIn 1.5s;
     & h3 {
         font-size: 4rem;
@@ -82,38 +80,48 @@
     & h4 {
         font-size: 3rem;
     }
+    & > div {
+        color: white;
+        width: 100%;
+        height: 18vh;
+        border-radius: 3rem;
+        display: flex;
+        &:hover:not(.socials)  {
+            animation: pulse-animation 2s infinite;
+        }
+        &:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+    }
+    & > div > img {
+        border-radius: 10%;
+        width: 22%;
+    }
+    & > div > .artistInfo {
+        width: 78%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        & .socials {
+            padding: 2rem;
+            img {
+                width: 4rem !important;
+                &:hover {
+                    transform: translateY(-1rem);
+                }
+            }
+        }
+    }
+}
+
+#badBunny .artistInfo, #drake .artistInfo {
+    flex-direction: row-reverse;
 }
 
 #musicArtists div:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
-#musicArtists > div {    
-    color: white;
-    width: 80wv;
-    height: 18vh;
-    border-radius: 3rem;
-    display: flex;
-    &:hover:not(.socials)  {
-        animation: pulse-animation 2s infinite;
-    }
-}
-
-#juiceWrld, #mariaBecerra {
-    justify-content: flex-end;
-    align-items: center;
-    & ul, .socials {
-        margin-right: 4vw;
-    }
-}
-
-#badBunny, #drake {
-    justify-content: flex-start;
-    align-items: center;
-    & ul, .socials {
-        margin-left: 4vw;
-    }
-}
 
 .socials {
     img {
@@ -129,30 +137,28 @@
     list-style-type: none;
 }
 
-#juiceWrld {
-     background: url("../imgs/artists/juicewrld.jpg") no-repeat left top, linear-gradient(to right, black 50%, white 100%);
-    }
-
-#badBunny {
-    background: url("../imgs/artists/badbunny.jpg") no-repeat right top, linear-gradient(to right, black 0%, yellow 100%);
-   }
-    
-#mariaBecerra {
-    background: url("../imgs/artists/mariabecerra.jpg") no-repeat left top, linear-gradient(to right, purple 20%, black 100%);
-   }
-
-#drake {
-    background: url("../imgs/artists/drake.jpg") no-repeat right top, linear-gradient(to right, rgba(129, 27, 27, 0.267) 20%, black 100%);
-   }
 
 #musicArtists ul li{    
     font-size: 2rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
 #action {
     display: flex;
     justify-content: space-evenly;
     z-index: 1;
+    background-image: linear-gradient(to right, var(--color-primary-light) 0%, var(--color-primary) 100%);
+    & a {
+        border-bottom: 1px solid var(--second-color);
+    }
+    & > div > form {
+        opacity: 0.1;
+    }
+
 }
 
 #logindiv, #registerdiv {
@@ -162,6 +168,10 @@
     flex-direction: column;
     & h4 {
         border-bottom: 3px solid var(--second-color);
+        & input {
+            background-color: red;
+            z-index: 1;
+        }
     }
     
 }
@@ -169,7 +179,8 @@
 #login, #register {
     display: flex;    
     flex-direction: column;
-    width: 50rem;
+    width: 40rem;
+    padding: 2rem;
     & input[type=button] {
         display: flex;
         justify-content: center;
@@ -196,7 +207,8 @@ footer {
     height: 25vh;
     background-image: linear-gradient(to right, var(--color-primary-light) 0%, var(--color-primary) 100%);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
     padding-right: 10rem;
     padding-left: 10rem;
     padding-top: 2rem;
@@ -206,3 +218,65 @@ footer {
         list-style-type: none;
     }
 }
+
+#juiceWrld {    
+    background-image: linear-gradient(to right, rgb(0, 0, 0) 50%, rgb(255, 255, 255) 100%);
+
+}
+
+#badBunny {
+    background-image: linear-gradient(to left, rgb(0, 0, 0) 30%, rgb(255, 238, 0) 100%);
+}
+#mariaBecerra {
+    background-image: linear-gradient(to right, rgb(0, 0, 0) 30%, rgb(187, 16, 209) 100%);
+}
+
+#drake {
+    background-image: linear-gradient(to left, rgb(0, 0, 0) 30%, rgb(179, 162, 162) 100%);
+}
+
+#action > div > input {
+    visibility: hidden;
+}
+
+label {
+    border-bottom: 1px solid var(--second-color);
+}
+
+#loginShow:checked + label + #login {
+    opacity: 1;
+    transition: opacity 1.5s;
+}
+#loginShow:not(:checked) + label {    
+    animation: color-change 2s infinite;
+}
+#registerShow:checked + label + #register {
+    opacity: 1;
+    transition: opacity 1.5s;
+}
+#registerShow:not(:checked) + label {    
+    animation: color-change 2s infinite;
+}
+
+label {
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+    width: 2rem;    
+  }
+    
+  ::-webkit-scrollbar-track {
+    background: rgb(22, 22, 22);
+  }
+  
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--second-color);
+  }
+    
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--second-color-scrollbar);
+  }

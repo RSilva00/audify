@@ -5,6 +5,7 @@
 
     --primary-color: #f4f2f2;
     --second-color: #f3ca20;
+    --second-color-scrollbar: #c59f06;
     --primary-color-burguer: #f4f2f2;
 
     --color-grey-light-1: #faf9f9;
@@ -27,9 +28,10 @@
 
 
 $bp-largest: 90.625em;     // 1450px
-$bp-large: 68.75em;    // 1100px
-$bp-medium: 56.25em;   // 900px
-$bp-smallest: 28.125em; // 450px
+$bp-large: 76.875em;    // 1230px
+$bp-medium: 65.625em;   // 1050px
+$bp-small: 47.5em; // 760px
+$bp-smallest: 22.5em; // 360px
 
 
 * {
@@ -47,15 +49,10 @@ html {
     box-sizing: border-box;
     font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
 
-    @media only screen and (max-width: $bp-large) {
-        font-size: 50%;
-        #musicArtists > div {
-            background-size: cover;
-        }
-    }
 }
 
 body {
+    min-width: 240px;
     font-weight: 400;
     line-height: 1.6;
     font-size: 4rem;
@@ -67,51 +64,114 @@ body {
     padding-left: 20rem;
 }
 
-@media screen and (max-width: $bp-largest){
-
+@media only screen and (max-width: $bp-largest){
+    html {
+        font-size: 50% !important;
+    }
     #musicArtists {
-        background-color: rgba(224, 248, 4, 0.212);
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        & > div{
-            width: 70rem;
-            height: 40rem;
-            background-size: auto;
-            align-items: flex-end;
-                        
-            justify-content: space-evenly;
-            margin-left: 0;
+        & > div > img {
+            width: 30% !important;
         }
-        & #juiceWrld, #mariaBecerra {
-            flex-direction: row-reverse;
+        & > div > #artistInfo {
+            width: 70% !important;
+        }
+    }
+}
+
+@media only screen and (max-width: $bp-large) {
+    html {
+        font-size: 45% !important;
+    }
+    #musicArtists {
+        & > div > img {
+            width: 35%;
+        }
+        & > div > .artistInfo {
+            width: 65%;
+        }
+    }
+}
+
+@media only screen and (max-width: $bp-medium) {
+    body {
+        padding-right: 10rem;
+        padding-left: 10rem;
+    }
+    html {
+        font-size: 40%;
+    }
+    #musicArtists > div {
+        height: 45vh !important;
+        justify-content: center;
+        flex-wrap: wrap;
+        & img {
+            width: 75% !important; 
+            object-fit:cover;
+            height: 60%;
+        }
+        & .artistInfo {
+            width: 70% !important;
+            height: 40%;
+            & .socials a img {
+                width: 5rem !important;
+                height: 5rem !important;
+            }
+        }
+    }
+    footer {
+        padding: 4rem;
+    }
+}
+@media only screen and (max-width: $bp-small) {
+    * {
+        padding: 1rem !important;
+    }
+    #userNav {
+        height: 150px !important;
+        align-items: center;
+        flex-wrap: wrap;
+        & img {
+            height: 8rem !important;
+            width: 12rem !important;
+        }
+    }
+    html {
+        font-size: 45% !important;
+        width: 100%;
+
+    }
+    #musicArtists > div {
+        border-radius: 1rem !important;
+        height: 70vh !important;
+        & img {
+            border-radius: 4rem !important;
+            width: 85% !important;
+            height: 55%;
+            
+        }
+        & .artistInfo {
+            width: 80% !important;
+            height: 40%;
+            align-items: center !important;
+            & .socials a img {
+                width: 6rem !important;
+                height: 6rem !important;
+            }
         }
     }
     #action {
         flex-direction: column;
     }
+    footer {
+        padding: 1rem;
+    }
 }
 
-@media screen and (max-width: $bp-medium) {
+@media only screen and (max-width: $bp-smallest) {
     html {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        font-size: 40% !important;
     }
-    #userNav {
-        flex-wrap: wrap;
-    }
-    #musicArtists {
-        width: 80vw;
-    }
-    #musicArtists > div{
-        width: 60vw;
-
-    }
-}
-
-@media screen and (max-width: $bp-smallest) {
-    #musicArtists > div{
-        height: 100vh;
+    #musicArtists > div img {
+        width: 100% !important;
     }
 }
